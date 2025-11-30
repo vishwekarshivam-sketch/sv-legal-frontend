@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SV Legal Services</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>SV Legal — Professional Legal Services</h1>
+</header>
+
+<section class="container">
+    <h2>Submit Your Legal Request</h2>
+    <form id="requestForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="text" id="formType" placeholder="Form / Service Type" required>
+        <input type="tel" id="mobile" placeholder="Mobile Number" required>
+        <input type="file" id="document" required>
+
+        <button type="submit">Submit Request</button>
+    </form>
+
+    <p id="status"></p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

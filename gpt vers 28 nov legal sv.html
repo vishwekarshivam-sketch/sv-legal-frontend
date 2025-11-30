@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adv. Sunil Vishwekar | Real Estate Legal Services</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- BASIC META -->
+    <meta name="description" content="Practice in real estate and property-related legal work including title search, documentation and related advisory.">
+    <meta name="keywords" content="Title Search, Real Estate Law, Property Documentation, Sale Deed, Legal Opinion, Maharashtra, Advocate">
+
+    <style>
+        :root {
+            --primary-navy: #0f2b46;
+            --accent-gold: #c5a059;
+            --light-gray: #f4f4f7;
+            --bg-soft: #f9fafc;
+            --white: #ffffff;
+            --text-main: #333;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-soft);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 0;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* Utility */
+        .section { padding: 60px 20px; }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
+
+        .pill {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: rgba(197,160,89,0.12);
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 11px 26px;
+            border-radius: 999px;
+            border: none;
+            background: var(--accent-gold);
+            color: #1a1a1a;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        .btn-primary:hover {
+            background: #b08c45;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.16);
+        }
+
+        .btn-ghost {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.6);
+            color: #fff;
+            background: transparent;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* HEADER / NAV */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: var(--white);
+            border-bottom: 3px solid var(--primary-navy);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .logo-text-main {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--primary-navy);
+        }
+
+        .logo-text-sub {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #777;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            color: var(--primary-navy);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 3px;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.2s ease;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* HERO */
+        .hero {
+            background: radial-gradient(circle at top, #253c5c 0, #0b1929 52%, #050a12 100%);
+            color: #fff;
+            padding: 60px 20px 70px 20px;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-title { font-size: 2.2rem; margin-bottom: 8px; }
+        .hero-sub { font-size: 1.05rem; color: #d5dee9; margin-bottom: 14px; }
+        .hero-meta { font-size: 0.9rem; color: #b6c2d3; }
+
+        .hero-photo-wrap { justify-self: center; }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-gold);
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 14px auto;
+            background: #fff;
+        }
+
+        .hero-card {
+            background: rgba(4, 14, 28, 0.9);
+            border-radius: 18px;
+            padding: 18px 20px;
+            border: 1px solid rgba(255,255,255,0.06);
+            color: #d9e2f1;
+            font-size: 0.86rem;
+        }
+
+        .hero-card h3 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+            color: var(--accent-gold);
+        }
+
+        /* QUICK ACTIONS */
+        .quick-actions { background: var(--white); }
+
+        .quick-grid {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 16px;
+        }
+
+        .qa-card {
+            background: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #e2e3ea;
+            padding: 16px 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            transition: box-shadow 0.16s ease, transform 0.16s ease, border 0.16s ease, background 0.16s ease;
+        }
+
+        .qa-card span.qa-emoji { font-size: 1.4rem; }
+
+        .qa-card h4 {
+            margin: 0 0 4px 0;
+            font-size: 0.95rem;
+            color: var(--primary-navy);
+        }
+
+        .qa-card p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #6a6a6a;
+        }
+
+        .qa-card:hover {
+            background: #0f2b46;
+            border-color: #0f2b46;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.16);
+        }
+
+        .qa-card:hover h4,
+        .qa-card:hover p { color: #fff; }
+
+        /* SERVICES */
+        .services { background: var(--bg-soft); }
+
+        .services-grid {
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 18px 18px;
+            border-left: 4px solid var(--accent-gold);
+            border-top: 1px solid #ececf4;
+            border-right: 1px solid #ececf4;
+            border-bottom: 1px solid #ececf4;
+            font-size: 0.88rem;
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: var(--primary-navy);
+        }
+
+        .service-card ul {
+            margin: 0;
+            padding-left: 18px;
+            color: #555;
+        }
+
+        /* ABOUT */
+        .about { background: #ffffff; }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: minmax(0,3fr) minmax(0,2.5fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .about-highlight {
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 15px;
+            margin: 18px 0;
+            font-style: italic;
+            color: var(--primary-navy);
+            font-weight: 600;
+        }
+
+        .about-sidecard {
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 16px 18px;
+            border: 1px solid #e3e3ee;
+            font-size: 0.9rem;
+        }
+
+        .about-sidecard h3 {
+            margin-top: 0;
+            font-size: 0.95rem;
+            color: var(--primary-navy);
+        }
+
+        .about-sidecard ul {
+            margin: 8px 0 0 0;
+            padding-left: 18px;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials { background: var(--primary-navy); color: #f3f6fb; }
+
+        .testi-grid {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+            gap: 22px;
+        }
+
+        .testi-card {
+            background: rgba(3,12,25,0.85);
+            border-radius: 14px;
+            padding: 18px 18px 16px 18px;
+            border: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.9rem;
+        }
+
+        .testi-name {
+            margin-top: 12px;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        /* FAQ */
+        .faq { background: #ffffff; }
+
+        .faq-item {
+            border-bottom: 1px solid #e4e4ec;
+            padding: 14px 0;
+        }
+
+        .faq-q {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            cursor: pointer;
+            color: var(--primary-navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .faq-q span.toggle { font-weight: 700; }
+
+        .faq-a {
+            display: none;
+            font-size: 0.88rem;
+            color: #555;
+            margin-top: 6px;
+        }
+
+        /* CONTACT & ENQUIRY */
+        .contact { background: #e9eff5; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 16px;
+            margin-bottom: 26px;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 16px 18px;
+            border: 1px solid #dde3ee;
+            font-size: 0.9rem;
+        }
+
+        .contact-card h3 {
+            margin-top: 8px;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+            color: var(--primary-navy);
+        }
+
+        .contact-icon { font-size: 1.4rem; }
+
+        .enquiry-box {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 18px 18px 20px 18px;
+            border: 1px solid #dde3ee;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 14px 16px;
+        }
+
+        .form-group { margin-bottom: 10px; }
+
+        .form-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 4px;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 9px 10px;
+            border-radius: 6px;
+            border: 1px solid #cdd5e0;
+            font-size: 0.88rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-textarea { resize: vertical; min-height: 80px; }
+
+        .form-footnote {
+            font-size: 0.78rem;
+            color: #777;
+            margin-top: 6px;
+        }
+
+        /* TITLE SEARCH + SALE DEED FORM FIELDS */
+        .ts-field{
+            width:100%;
+            padding:10px 14px;
+            border-radius:8px;
+            border:1px solid #d9dfe8;
+            font-size:0.95rem;
+            transition:.2s;
+        }
+        .ts-field:focus{
+            border-color:#c5a059;
+            box-shadow:0 0 0 3px rgba(197,160,89,0.25);
+            outline:none;
+        }
+        .ts-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+        .ts-grid2{display:flex;flex-direction:column;gap:14px;}
+
+        /* FOOTER */
+        footer {
+            background: #1b1b1f;
+            color: #9b9ba5;
+            text-align: center;
+            padding: 26px 20px 22px 20px;
+            font-size: 0.8rem;
+        }
+
+        /* DISCLAIMER OVERLAY */
+        .disclaimer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(3,10,20,0.86);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .disclaimer-box {
+            max-width: 620px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 24px 22px 20px 22px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            border-top: 6px solid var(--accent-gold);
+            font-size: 0.88rem;
+        }
+
+        .disclaimer-box h2 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: 1.15rem;
+            color: var(--primary-navy);
+        }
+
+        .disclaimer-box p { margin: 6px 0; }
+
+        .disclaimer-note {
+            background: #f6f0df;
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 0.78rem;
+            margin-top: 10px;
+        }
+
+        .disclaimer-actions {
+            margin-top: 16px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            border-radius: 999px;
+            border: 1px solid #cdd2de;
+            padding: 9px 20px;
+            background: #f5f7fb;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        /* FLOATING WHATSAPP */
+        .wa-float {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+            z-index: 1500;
+        }
+
+        .wa-float svg { width: 32px; height: 32px; fill: #ffffff; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: left; }
+            .hero-photo-wrap { order: -1; }
+            .hero-title { font-size: 1.8rem; }
+            .about-layout { grid-template-columns: 1fr; }
+            .nav-container { justify-content: space-between; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links { justify-content: center; }
+            .nav-container { flex-direction: column; align-items: flex-start; }
+            .hero { padding-top: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- DISCLAIMER (per-tab; shows when new tab/window) -->
+    <div id="disclaimer-overlay" class="disclaimer-overlay">
+        <div class="disclaimer-box">
+            <h2>Disclaimer & Confirmation</h2>
+            <p>
+                This website is intended only to provide general information about the practice area and work handled.
+                It is not an advertisement, personal solicitation, or invitation in any form.
+            </p>
+            <p>
+                The contents of this website do not constitute legal advice and should not be relied upon as such.
+                Visitors are advised to seek specific legal advice for their individual matters.
+            </p>
+            <p>
+                By proceeding further and accessing this website, you acknowledge that:
+            </p>
+            <ul style="margin-top:6px; padding-left:18px; font-size:0.85rem;">
+                <li>You are accessing this information on your own, without any form of solicitation.</li>
+                <li>Any communication through this website or messaging platforms will not create a lawyer–client relationship by itself.</li>
+                <li>You have read and understood this disclaimer.</li>
+            </ul>
+            <div class="disclaimer-note">
+                If you do not agree with the terms of this disclaimer, please close the website tab or navigate away.
+            </div>
+            <div class="disclaimer-actions">
+                <button class="btn-secondary" onclick="exitSite()">Exit</button>
+                <button class="btn-primary" onclick="acceptDisclaimer()">I Agree & Proceed</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="advocate_logo.png" alt="Logo" class="logo-img">
+                <div>
+                    <div class="logo-text-main">SV LEGAL ASSOCIATES</div>
+                    <div class="logo-text-sub">Real Estate & Property Related Work</div>
+                </div>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#quick-actions">Quick Access</a>
+                <a href="#services">Practice Areas</a>
+                <a href="#about">Profile</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="tel:+918446537616" class="btn-primary">Call: +91 84465 37616</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <span class="pill">Real Estate & Property Related Work</span>
+                <h1 class="hero-title">Adv. Sunil Vishwekar</h1>
+                <h2 class="hero-sub">
+                    Practice focused on property documentation, title verification and related advisory.
+                </h2>
+                <p class="hero-meta">
+                    Based in Maharashtra • ~20 years of work experience in property matters, agreements and related documentation.
+                </p>
+
+                <div style="margin-top:18px;">
+                    <a href="#quick-actions" class="btn-primary">View Key Services</a>
+                    <a href="#contact" class="btn-ghost">Contact for further information</a>
+                </div>
+
+                <div style="margin-top:22px; font-size:0.82rem; color:#91a4be;">
+                    Information on this page is for general reference only and does not constitute legal advice.
+                </div>
+            </div>
+
+            <div class="hero-photo-wrap">
+                <img src="profile.jpg" alt="Advocate profile" class="profile-img">
+                <div class="hero-card">
+                    <h3>Areas commonly handled</h3>
+                    <ul style="margin:8px 0 0 16px; padding:0;">
+                        <li>Title search & document scrutiny for land, flats and plots</li>
+                        <li>Drafting and vetting of sale deeds, agreements and related documents</li>
+                        <li>Public notices, legal opinions and related correspondence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK ACTIONS -->
+    <section id="quick-actions" class="section quick-actions">
+        <div class="section-inner">
+            <span class="pill">Quick Access</span>
+            <h2 style="margin-top:10px; margin-bottom:6px; color:var(--primary-navy);">
+                Commonly Requested Work
+            </h2>
+            <p style="font-size:0.9rem; color:#666; max-width:640px;">
+                These links help you share your requirement quickly through WhatsApp or the forms below. Details can be discussed and clarified further as needed.
+            </p>
+
+            <div class="quick-grid" style="margin-top:22px;">
+
+                <!-- Title Search opens modal -->
+                <div class="qa-card" onclick="openTSModal()">
+                    <span class="qa-emoji">📝</span>
+                    <div>
+                        <h4>Title Search / Report</h4>
+                        <p>Submit property details for a title search report.</p>
+                    </div>
+                </div>
+
+                <!-- Sale Deed opens modal -->
+                <div class="qa-card" onclick="openSaleDeedModal()">
+                    <span class="qa-emoji">📄</span>
+                    <div>
+                        <h4>Sale Deed / Agreement Drafting</h4>
+                        <p>Share party & property details for drafting.</p>
+                    </div>
+                </div>
+
+                <a class="qa-card" href="https://wa.me/918446537616?text=I%20would%20like%20to%20get%20my%20property%20documents%20verified.%20Please%20inform%20what%20files%20to%20share.">
+                    <span class="qa-emoji">📑</span>
+                    <div>
+                        <h4>Document Verification</h4>
+                        <p>Share copies of 7/12, Index II and related papers for review.</p>
+                    </div>
+                </a>
+
+                <a class="qa-card" href="https://wa.me/918446537616?text=I%20wish%20to%20issue%20a%20public%20notice%20regarding%20a%20property.%20Request%20further%20information.">
+                    <span class="qa-emoji">📰</span>
+                    <div>
+                        <h4>Public Notice</h4>
+                        <p>Drafting public notice for publication in newspapers.</p>
+                    </div>
+                </a>
+
+                <a class="qa-card" href="https://wa.me/918446537616?text=I%20would%20like%20to%20seek%20a%20legal%20opinion%20on%20a%20property%20transaction.%20Kindly%20guide.">
+                    <span class="qa-emoji">⚖️</span>
+                    <div>
+                        <h4>Legal Opinion</h4>
+                        <p>Opinion based on documents and information provided.</p>
+                    </div>
+                </a>
+
+                <a class="qa-card" href="https://wa.me/918446537616?text=I%20require%20help%20with%20a%20notice%20or%20reply.%20Request%20further%20details.">
+                    <span class="qa-emoji">📬</span>
+                    <div>
+                        <h4>Notice / Reply Draft</h4>
+                        <p>Drafting notices or replies connected with property matters.</p>
+                    </div>
+                </a>
+
+                <a class="qa-card" href="https://wa.me/918446537616?text=Please%20share%20the%20professional%20fees%20structure%20and%20payment%20details.">
+                    <span class="qa-emoji">💳</span>
+                    <div>
+                        <h4>Fees & Payment Details</h4>
+                        <p>Share your requirement and request fee structure.</p>
+                    </div>
+                </a>
+
+                <a class="qa-card" href="https://maps.app.goo.gl/AXbd8w3S76BxfAaA6" target="_blank">
+                    <span class="qa-emoji">📍</span>
+                    <div>
+                        <h4>Office Location</h4>
+                        <p>Open in Google Maps for directions and timing.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES / PRACTICE AREAS -->
+    <section id="services" class="section services">
+        <div class="section-inner">
+            <span class="pill">Practice Profile</span>
+            <h2 style="margin-top:10px; margin-bottom:6px; color:var(--primary-navy);">
+                Work Commonly Undertaken
+            </h2>
+            <p style="font-size:0.9rem; color:#666; max-width:730px;">
+                A broad overview of work typically handled is given below. Exact scope depends on the facts, documents and instructions of each matter.
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Title Search & Property Records</h3>
+                    <ul>
+                        <li>Examining 7/12 extracts, mutation entries, Index II and related records.</li>
+                        <li>Review of prior conveyance / development documents where available.</li>
+                        <li>Basic opinion on title based on the documents shared.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Sale Deeds & Agreements</h3>
+                    <ul>
+                        <li>Drafting and vetting of sale deeds, agreements to sell and MOUs.</li>
+                        <li>Documentation for land, flats, plots and related property transactions.</li>
+                        <li>Incorporating transaction-specific terms based on instructions.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Development & Related Documentation</h3>
+                    <ul>
+                        <li>Development agreements and related documentation (as applicable).</li>
+                        <li>Deeds of declaration, power of attorney and similar instruments.</li>
+                        <li>Review of standard formats used by developers, subject to documents provided.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Public Notices & Communications</h3>
+                    <ul>
+                        <li>Drafting public notices for newspaper publication.</li>
+                        <li>Notices / replies in relation to property matters, as per instructions.</li>
+                        <li>Assistance with language and clarity for communication of position.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Opinions & General Advisory</h3>
+                    <ul>
+                        <li>Written opinion based on available documents and facts explained.</li>
+                        <li>General guidance regarding risk areas in a proposed transaction.</li>
+                        <li>Clarifying queries on documents already executed or proposed.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Online Consultation (As Feasible)</h3>
+                    <ul>
+                        <li>Consultation over phone or video, subject to prior scheduling.</li>
+                        <li>Document sharing through email or messaging platforms.</li>
+                        <li>Follow-up clarification calls as may be required.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / PROFILE -->
+    <section id="about" class="section about">
+        <div class="section-inner">
+            <span class="pill">Profile</span>
+            <h2 style="margin-top:10px; margin-bottom:16px; color:var(--primary-navy);">
+                Background & Approach
+            </h2>
+
+            <div class="about-layout">
+                <div>
+                    <p style="font-size:0.92rem; text-align:justify;">
+                        Adv. Sunil Vishwekar is an alumnus of <strong>Dayanand College of Law, Latur</strong>.
+                        The journey into the legal profession began after marriage, balancing family responsibilities
+                        with legal education and early practice.
+                    </p>
+                    <p style="font-size:0.92rem; text-align:justify;">
+                        Over the years, work has gradually focused on real estate and property-related documentation,
+                        especially in relation to land, flats and layouts. Many matters involve scrutiny of existing
+                        papers before clients commit to a transaction.
+                    </p>
+                    <div class="about-highlight">
+                        “Property transactions often carry both financial and emotional weight. The effort here is to ensure that
+                        documentation and records are examined with care, so that clients can take informed decisions.”
+                    </div>
+                    <p style="font-size:0.92rem; text-align:justify;">
+                        Every property and family situation is different. The approach is therefore to understand the background
+                        briefly, review the documents made available and then discuss options in a practical, clear manner.
+                    </p>
+                </div>
+
+                <aside class="about-sidecard">
+                    <h3>Working Style (Indicative)</h3>
+                    <ul>
+                        <li>Emphasis on document-based discussion.</li>
+                        <li>Clear explanation of gaps or missing papers, if any.</li>
+                        <li>Preference for written communication for important points.</li>
+                        <li>Realistic view of what can and cannot be confirmed from available records.</li>
+                    </ul>
+                    <p style="margin-top:10px; font-size:0.82rem; color:#666;">
+                        The exact nature of work, time-lines and professional fees are normally discussed at the beginning,
+                        once the basic facts and expectations are understood.
+                    </p>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section testimonials">
+        <div class="section-inner">
+            <span class="pill">Client Experience (Illustrative)</span>
+            <h2 style="margin-top:10px; margin-bottom:14px; color:var(--accent-gold);">
+                Feedback Shared by Clients
+            </h2>
+            <p style="font-size:0.88rem; max-width:700px;">
+                The following are illustrative, anonymised remarks summarising what some clients have shared
+                about their experience. They do not create any expectation of outcome in future matters.
+            </p>
+
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <p>
+                        “Existing papers relating to our land were explained in simple language, which helped us
+                        decide the next steps more confidently.”
+                    </p>
+                    <div class="testi-name">— Client (Land Matter)</div>
+                </div>
+                <div class="testi-card">
+                    <p>
+                        “Drafts shared for our flat transaction were detailed and practical, and our questions on
+                        clauses were addressed patiently.”
+                    </p>
+                    <div class="testi-name">— Client (Flat Purchase)</div>
+                </div>
+                <div class="testi-card">
+                    <p>
+                        “Most discussions happened over phone and messages, which was convenient as we were based
+                        outside the city.”
+                    </p>
+                    <div class="testi-name">— Client (Outstation)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq">
+        <div class="section-inner">
+            <span class="pill">General Queries</span>
+            <h2 style="margin-top:10px; margin-bottom:14px; color:var(--primary-navy);">
+                Frequently Asked Questions
+            </h2>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>What documents are usually needed for a basic title review?</span>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    Typically, copies of 7/12 extracts, mutation entries (Ferfar), relevant Index II entries and
+                    earlier sale deeds / agreements are helpful. In layout or flat matters, layout plans and approvals
+                    may also be required. Exact requirements depend on the specific case.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Can every risk in a property transaction be ruled out through documents alone?</span>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    No. Document review helps understand many aspects but may not reveal every possible issue.
+                    Certain aspects may require independent enquiries, revenue office inputs, survey work or
+                    other checks. This is generally discussed case by case.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Is this website giving legal advice for my situation?</span>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    No. The information here is general in nature and only describes the type of work commonly handled.
+                    It is not tailored to your specific facts and is not legal advice. For any concrete guidance,
+                    you should share your documents and background and obtain a specific opinion.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & ENQUIRY FORM -->
+    <section id="contact" class="section contact">
+        <div class="section-inner">
+            <span class="pill">Contact</span>
+            <h2 style="margin-top:10px; margin-bottom:16px; color:var(--primary-navy);">
+                Contact Details & Enquiry Form
+            </h2>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Mobile / WhatsApp</h3>
+                    <p>+91 84465 37616</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:adv.vishwekarsg@gmail.com">adv.vishwekarsg@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">⏱</div>
+                    <h3>Typical Office Timings</h3>
+                    <p>10:00 AM – 7:00 PM (subject to change on holidays / court work)</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Office Location</h3>
+                    <p>
+                        <a href="https://maps.app.goo.gl/AXbd8w3S76BxfAaA6" target="_blank" style="color:var(--primary-navy); text-decoration:underline; font-weight:600;">
+                            View on Google Maps
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="enquiry-box">
+                <h3 style="margin-top:0; margin-bottom:10px; color:var(--primary-navy);">
+                    Share Basic Details of Your Matter
+                </h3>
+                <p style="font-size:0.86rem; color:#666; margin-bottom:14px;">
+                    The form below helps you briefly describe your requirement. On submitting, a draft message will
+                    open in WhatsApp and an email window will also open with the same details, so that you may send it
+                    after review.
+                </p>
+
+                <form id="enquiry-form" onsubmit="submitEnquiry(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-input" id="enq-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Mobile Number</label>
+                            <input type="tel" class="form-input" id="enq-mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email ID (optional)</label>
+                            <input type="email" class="form-input" id="enq-email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">City / Area</label>
+                            <input type="text" class="form-input" id="enq-city">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Type of Requirement</label>
+                            <select id="enq-type" class="form-select">
+                                <option value="Title search / document review">Title search / document review</option>
+                                <option value="Sale deed / agreement drafting">Sale deed / agreement drafting</option>
+                                <option value="Public notice / notice / reply">Public notice / notice / reply</option>
+                                <option value="General property-related opinion">General property-related opinion</option>
+                                <option value="Other (please describe below)">Other (please describe below)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top:8px;">
+                        <label class="form-label">Brief background / query (in your own words)</label>
+                        <textarea id="enq-message" class="form-textarea" placeholder="You may mention whether it is land / flat / plot, location and any immediate concern."></textarea>
+                    </div>
+
+                    <div class="form-footnote">
+                        Please avoid sharing sensitive personal information unrelated to the property matter.
+                        Documents can be separately shared over email or WhatsApp once initial contact is established.
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="margin-top:14px;">Prepare WhatsApp & Email Draft</button>
+                </form>
+            </div>
+
+            <p style="margin-top:14px; font-size:0.78rem; color:#555;">
+                Note: Sending a message or email does not by itself create a lawyer–client relationship. Engagement is
+                subject to confirmation of scope, availability and professional fees.
+            </p>
+        </div>
+    </section>
+
+    <!-- OFFICE LOCATION FULL-WIDTH SECTION -->
+    <section class="section" style="background:#f7f9fc;">
+        <div class="section-inner">
+            <h2 style="font-size:1.65rem; margin-bottom:18px; font-weight:800; color:#0f2b46; display:flex; align-items:center; gap:10px;">
+                📍 Office Location
+            </h2>
+
+            <div style="
+                border-radius:22px;
+                overflow:hidden;
+                box-shadow:0 12px 30px rgba(0,0,0,0.12);
+                border:1px solid #dce2e9;">
+                <!-- Replace src below with your Google Maps EMBED link -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.8443032144564!2d76.56188167581851!3d18.39993593267043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf83176e67867f%3A0xceba8add71f5e5a9!2sVishwekar%20Advocate%20-%20SV%20Legal%20Associates!5e0!3m2!1sen!2sin!4v1764258918529!5m2!1sen!2sin" 
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <a href="https://maps.app.goo.gl/AXbd8w3S76BxfAaA6" target="_blank"
+               style="display:inline-block; margin-top:14px; background:#c5a059; color:#0d1b2f; 
+               padding:12px 28px; border-radius:30px; font-weight:700; font-size:0.95rem;">
+                Open in Google Maps ↗
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Adv. Sunil Vishwekar – Real Estate & Property Related Legal Work</p>
+        <p>&copy; <span id="year"></span> SV Legal Associates. All rights reserved.</p>
+    </footer>
+
+    <!-- TITLE SEARCH POPUP (PREMIUM UI) -->
+    <div id="tsModal" class="tsModal" style="
+        position:fixed; inset:0; display:none; justify-content:center; align-items:center;
+        background:rgba(0,0,0,0.60); backdrop-filter:blur(6px); z-index:3000;">
+        
+        <div style="
+            width:92%; max-width:720px; background:#ffffff; border-radius:18px;
+            padding:38px 40px; max-height:92vh; overflow-y:auto;
+            box-shadow:0 20px 60px rgba(0,0,0,0.30);">
+            
+            <h2 style="text-align:center; margin:0; font-size:1.8rem; 
+                font-weight:800; color:#0f2b46;">
+                Request Title Search Report
+            </h2>
+            <p style="text-align:center; font-size:0.96rem; color:#606b7c; margin-bottom:28px;">
+                Fill in the applicable details. Fields can vary depending on property type.
+            </p>
+
+            <hr style="border:0; border-top:1px solid #e6e8ec; margin-bottom:28px;">
+
+            <form onsubmit="submitTS(event)" style="display:flex; flex-direction:column; gap:26px;">
+
+                <!-- 1. Client Details -->
+                <div>
+                    <h3 style="margin-bottom:12px; color:#0f2b46; font-size:1.15rem;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        1. Client Details
+                    </h3>
+
+                    <div style="display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+                        <input class="ts-field" placeholder="Name of Client" id="ts_name" required>
+                        <input class="ts-field" placeholder="Address" id="ts_address" required>
+                        <input class="ts-field" placeholder="Mobile Number" id="ts_mobile" required>
+                        <input class="ts-field" placeholder="Email (optional)" id="ts_email">
+                    </div>
+
+                    <select class="ts-field" id="ts_purpose">
+                        <option>Purchase</option>
+                        <option>Loan/Mortgage</option>
+                        <option>Legal Opinion</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <!-- 2. Property Details -->
+                <div>
+                    <h3 style="margin-bottom:12px; color:#0f2b46; font-size:1.15rem;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        2. Property Details
+                    </h3>
+
+                    <select class="ts-field" id="ts_type" onchange="toggleTSFields()">
+                        <option value="land">Agricultural / Open Land</option>
+                        <option value="plot">NA / Layout Plot</option>
+                        <option value="flat">Flat / Apartment / Building</option>
+                    </select>
+
+                    <!-- LAND -->
+                    <div id="ts_land" style="display:grid; gap:14px; margin-top:14px;
+                         grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+                        <input class="ts-field" placeholder="Survey / Gat No" id="ts_gat">
+                        <input class="ts-field" placeholder="Hissa No (if any)" id="ts_hissa">
+                        <input class="ts-field" placeholder="Area of Land" id="ts_area_land">
+                        <input class="ts-field" placeholder="Village" id="ts_village">
+                        <input class="ts-field" placeholder="Taluka" id="ts_taluka">
+                        <input class="ts-field" placeholder="District" id="ts_district">
+                    </div>
+
+                    <!-- PLOT -->
+                    <div id="ts_plot" style="display:none; margin-top:14px; gap:14px;
+                        grid-template-columns:repeat(auto-fit,minmax(200px,1fr));" class="ts-grid">
+                        <input class="ts-field" placeholder="Plot No" id="ts_plotno">
+                        <input class="ts-field" placeholder="Layout Name" id="ts_layout">
+                        <input class="ts-field" placeholder="Area / Size" id="ts_plotarea">
+                        <input class="ts-field" placeholder="City / Village" id="ts_plotcity">
+                    </div>
+
+                    <!-- FLAT -->
+                    <div id="ts_flat" style="display:none; margin-top:14px;" class="ts-grid2">
+                        <input class="ts-field" placeholder="Building Name" id="ts_bldname">
+                        <div style="display:flex; gap:14px;">
+                            <input class="ts-field" placeholder="Flat/Shop No" id="ts_flatno" style="flex:1;">
+                            <input class="ts-field" placeholder="Floor/Wing" id="ts_floor" style="flex:1;">
+                        </div>
+                        <input class="ts-field" placeholder="Area" id="ts_flatarea">
+                        <input class="ts-field" placeholder="CTS/Survey No" id="ts_cts">
+                        <input class="ts-field" placeholder="Society Name" id="ts_society">
+                        <input class="ts-field" placeholder="Full Address" id="ts_bldaddr">
+                    </div>
+                </div>
+
+                <!-- 3. Additional Information -->
+                <div>
+                    <h3 style="margin-bottom:12px; color:#0f2b46; font-size:1.15rem;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        3. Additional Information
+                    </h3>
+
+                    <div style="display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+                        <input class="ts-field" placeholder="Loan/Mortgage details (if any)" id="ts_loan">
+                        <input class="ts-field" placeholder="Litigation/Dispute (if any)" id="ts_dispute">
+                        <select class="ts-field" id="ts_period">
+                            <option>13 Years</option>
+                            <option>18 Years</option>
+                            <option>30 Years</option>
+                        </select>
+                    </div>
+
+                    <textarea class="ts-field" rows="3" placeholder="Specific Instructions" id="ts_instruct"
+                              style="resize:vertical;"></textarea>
+
+                    <label style="display:flex; align-items:center; gap:8px; font-size:0.90rem;">
+                        <input type="checkbox" required> I confirm information entered is accurate.
+                    </label>
+                </div>
+
+                <button type="submit" style="
+                    width:100%; padding:14px 0; background:#c5a059; color:#0f2b46;
+                    border:none; border-radius:10px; font-weight:800; font-size:1.05rem;">
+                    Submit Request
+                </button>
+
+                <button type="button" onclick="closeTSModal()" style="
+                    width:100%; padding:12px 0; margin-top:-8px;
+                    background:#e8e8e8; border:none; border-radius:10px;
+                    font-weight:600; color:#333;">
+                    Cancel / Close
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SALE DEED / AGREEMENT POPUP -->
+    <div id="saleDeedModal" class="tsModal" style="
+        position:fixed; inset:0; display:none; justify-content:center; align-items:center;
+        background:rgba(0,0,0,0.60); backdrop-filter:blur(6px); z-index:3000;">
+        
+        <div style="
+            width:92%; max-width:750px; background:#ffffff; border-radius:18px;
+            padding:38px 42px; max-height:92vh; overflow-y:auto;
+            box-shadow:0 20px 60px rgba(0,0,0,0.30);">
+            
+            <h2 style="text-align:center; margin:0 0 6px; font-size:1.8rem; font-weight:800; color:#0f2b46;">
+                Sale Deed / Agreement Drafting Request
+            </h2>
+            <p style="text-align:center; font-size:0.96rem; color:#606b7c; margin-bottom:26px;">
+                Provide complete details to draft a legally sound Sale Deed.
+            </p>
+            <hr style="border:0; border-top:1px solid #e6e8ec; margin-bottom:26px;">
+
+            <form onsubmit="submitSaleDeed(event)" style="display:flex; flex-direction:column; gap:30px;">
+
+                <!-- 1. Details of Parties -->
+                <div>
+                    <h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        1. Details of Seller (Vendor)
+                    </h3>
+
+                    <div class="ts-grid2" style="gap:14px;">
+                        <input class="ts-field" placeholder="Full Name" id="sd_sell_name">
+                        <input class="ts-field" placeholder="Age" id="sd_sell_age">
+                        <input class="ts-field" placeholder="Occupation" id="sd_sell_job">
+                        <input class="ts-field" placeholder="Residential Address" id="sd_sell_addr">
+                        <input class="ts-field" placeholder="Mobile Number" id="sd_sell_mobile">
+                        <input class="ts-field" placeholder="Email ID" id="sd_sell_email">
+                        <input class="ts-field" placeholder="PAN Number" id="sd_sell_pan">
+                        <input class="ts-field" placeholder="ID Proof (Aadhaar/Passport)" id="sd_sell_id">
+                    </div>
+
+                    <br><h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        Purchaser (Vendee)
+                    </h3>
+
+                    <div class="ts-grid2" style="gap:14px;">
+                        <input class="ts-field" placeholder="Full Name" id="sd_buy_name">
+                        <input class="ts-field" placeholder="Age" id="sd_buy_age">
+                        <input class="ts-field" placeholder="Occupation" id="sd_buy_job">
+                        <input class="ts-field" placeholder="Address" id="sd_buy_addr">
+                        <input class="ts-field" placeholder="Mobile Number" id="sd_buy_mobile">
+                        <input class="ts-field" placeholder="Email ID" id="sd_buy_email">
+                        <input class="ts-field" placeholder="PAN Number" id="sd_buy_pan">
+                    </div>
+                </div>
+
+                <!-- 2. Property Details -->
+                <div>
+                    <h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        2. Full Details of the Property
+                    </h3>
+
+                    <select class="ts-field" id="sd_type">
+                        <option>Plot</option><option>Flat</option><option>House</option>
+                        <option>Building</option><option>Agricultural Land</option><option>Commercial</option>
+                    </select>
+
+                    <div class="ts-grid2" style="gap:14px;">
+                        <input class="ts-field" placeholder="Survey / Gat / CTS / Hissa No" id="sd_survey">
+                        <input class="ts-field" placeholder="Plot/Flat/Unit No (if any)" id="sd_unit">
+                        <input class="ts-field" placeholder="Area / Size (sq.ft, sq.m, acre etc.)" id="sd_area">
+
+                        <input class="ts-field" placeholder="Boundaries (East)" id="sd_east">
+                        <input class="ts-field" placeholder="Boundaries (West)" id="sd_west">
+                        <input class="ts-field" placeholder="Boundaries (North)" id="sd_north">
+                        <input class="ts-field" placeholder="Boundaries (South)" id="sd_south">
+
+                        <textarea class="ts-field" placeholder="Construction details / CC / Sanction (if any)" id="sd_const"></textarea>
+                    </div>
+                </div>
+
+                <!-- 3. Title / Ownership -->
+                <div>
+                    <h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        3. Title & Ownership Details
+                    </h3>
+
+                    <textarea class="ts-field" placeholder="How was the property acquired?" id="sd_acquired"></textarea>
+                    <textarea class="ts-field" placeholder="Share of others / Rights (if any)" id="sd_rights"></textarea>
+                    <textarea class="ts-field" placeholder="Possession details" id="sd_possession"></textarea>
+                </div>
+
+                <!-- 4. Encumbrances -->
+                <div>
+                    <h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        4. Encumbrance / Charges
+                    </h3>
+
+                    <textarea class="ts-field" placeholder="Loan/Mortgage (Bank, Account No)" id="sd_loan"></textarea>
+                    <textarea class="ts-field" placeholder="Pending dues (Society/Tax/Utility)" id="sd_dues"></textarea>
+                    <textarea class="ts-field" placeholder="Encumbrance Certificate/Search Report available?" id="sd_ec"></textarea>
+                </div>
+
+                <!-- 5. Society -->
+                <div>
+                    <h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        5. Municipal / Society Details
+                    </h3>
+
+                    <textarea class="ts-field" placeholder="Society Name / NOC required?" id="sd_society"></textarea>
+                    <textarea class="ts-field" placeholder="Property Tax Receipts / Electricity-Water connection" id="sd_municipal"></textarea>
+                </div>
+
+                <!-- 6. Sale Consideration -->
+                <div>
+                    <h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        6. Sale Consideration / Payment
+                    </h3>
+
+                    <input class="ts-field" placeholder="Total Sale Price" id="sd_price">
+                    <input class="ts-field" placeholder="Token/Advance Amount Paid" id="sd_advance">
+                    <textarea class="ts-field" placeholder="Mode of Payment / Bank / Loan Details" id="sd_payment"></textarea>
+                </div>
+
+                <!-- 7. Possession -->
+                <div>
+                    <h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        7. Possession
+                    </h3>
+
+                    <textarea class="ts-field" placeholder="Possession on registration or later date?" id="sd_possession_date"></textarea>
+                </div>
+
+                <!-- 8. Required Docs -->
+                <div>
+                    <h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        8. Required Documents Checklist
+                    </h3>
+
+                    <textarea class="ts-field" placeholder="List documents available with seller" id="sd_docs"></textarea>
+                </div>
+
+                <!-- 9. Special Clauses -->
+                <div>
+                    <h3 style="margin-bottom:12px; font-weight:700; color:#0f2b46;
+                        border-left:5px solid #c5a059; padding-left:10px;">
+                        9. Special Clauses / Conditions
+                    </h3>
+
+                    <textarea class="ts-field" placeholder="Any specific terms / indemnity / rights" id="sd_clauses"></textarea>
+                </div>
+
+                <label style="display:flex; align-items:center; gap:8px; margin-top:-10px;">
+                    <input type="checkbox" required> I confirm the above information is accurate.
+                </label>
+
+                <button type="submit" style="
+                    width:100%; padding:14px 0; background:#c5a059; color:#0f2b46;
+                    border:none; border-radius:10px; font-weight:800; font-size:1.05rem;">
+                    Submit Sale Deed Request
+                </button>
+
+                <button type="button" onclick="closeSaleDeedModal()" style="
+                    width:100%; padding:12px 0; background:#e8e8e8;
+                    border:none; border-radius:10px; font-weight:600; color:#333;">
+                    Cancel / Close
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/918446537616" class="wa-float" aria-label="Open WhatsApp chat">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script>
+
+
+/* ===== CONFIG ===== */
+const SHEET_WEBHOOK   = "https://script.google.com/macros/s/AKfycbz9TcAH-DNA23ULaNt4tpGPko2YvUrFTashS3CPp7F_KXTpX0AuAUXnhm8TiuBYGR5_/exec";
+const ADMIN_WHATSAPP  = "918446537616";
+const EMAIL_ADDRESS   = "adv.vishwekarsg@gmail.com";
+
+/* ===== BASIC INIT ===== */
+document.getElementById("year").innerText = new Date().getFullYear();
+
+/* ===== DISCLAIMER LOGIC ===== */
+(function initDisclaimer() {
+    let seen = false;
+    try {
+        seen = sessionStorage.getItem("sv_disclaimer_seen") === "yes";
+    } catch (e) { seen = false; }
+
+    const overlay = document.getElementById("disclaimer-overlay");
+    if (!overlay) return;
+
+    overlay.style.display = seen ? "none" : "flex";
+})();
+
+function acceptDisclaimer(){
+    try {
+        sessionStorage.setItem("sv_disclaimer_seen","yes");
+    } catch (e) {}
+    const overlay = document.getElementById("disclaimer-overlay");
+    if (overlay) overlay.style.display = "none";
+}
+
+function exitSite(){
+    window.open('', '_self');
+    window.close();
+    setTimeout(()=>{ window.location.href = "about:blank"; },100);
+}
+
+/* ===== FAQ TOGGLE ===== */
+function toggleFaq(el){
+    const answer = el.nextElementSibling;
+    const toggle = el.querySelector(".toggle");
+    if (!answer || !toggle) return;
+
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+        toggle.textContent = "+";
+    } else {
+        answer.style.display = "block";
+        toggle.textContent = "–";
+    }
+}
+
+/* ===== MODALS (OPEN/CLOSE) ===== */
+function openTSModal(){ document.getElementById("tsModal").style.display="flex"; }
+function closeTSModal(){ document.getElementById("tsModal").style.display="none"; }
+
+function openSaleDeedModal(){ document.getElementById("saleDeedModal").style.display="flex"; }
+function closeSaleDeedModal(){ document.getElementById("saleDeedModal").style.display="none"; }
+
+/* ===== TITLE SEARCH PROPERTY TYPE TOGGLE ===== */
+function toggleTSFields(){
+    const type = document.getElementById("ts_type").value;
+    const land = document.getElementById("ts_land");
+    const plot = document.getElementById("ts_plot");
+    const flat = document.getElementById("ts_flat");
+
+    if (land) land.style.display = (type === "land") ? "grid" : "none";
+    if (plot) plot.style.display = (type === "plot") ? "grid" : "none";
+    if (flat) flat.style.display = (type === "flat") ? "flex" : "none";
+}
+
+/* ===== TITLE SEARCH SUBMIT → SHEET + WHATSAPP ===== */
+async function submitTS(e){
+    e.preventDefault();
+
+    const name    = document.getElementById("ts_name").value.trim();
+    const mobile  = document.getElementById("ts_mobile").value.trim();
+    const email   = document.getElementById("ts_email").value.trim();
+    const address = document.getElementById("ts_address").value.trim();
+    const type    = document.getElementById("ts_type").value;
+
+    const gat     = document.getElementById("ts_gat").value.trim();
+    const hissa   = document.getElementById("ts_hissa").value.trim();
+    const area    = document.getElementById("ts_area_land").value.trim();
+    const village = document.getElementById("ts_village").value.trim();
+    const notes   = document.getElementById("ts_instruct").value.trim();
+
+    const data = {
+        form:         "Title Search",
+        name:         name,
+        mobile:       mobile,
+        email:        email,
+        address:      address,
+        propertyType: type,
+        details:      `Gat/Survey: ${gat}  Hissa: ${hissa}  Area: ${area}`,
+        extra:        village,
+        notes:        notes
+    };
+
+    // send to Google Sheet (no await needed, fire-and-forget)
+    fetch(SHEET_WEBHOOK, {
+        method: "POST",
+        body: JSON.stringify(data)
+    });
+
+    const msg =
+        `*TITLE SEARCH REQUEST*\n\n` +
+        `👤 Name: ${name}\n` +
+        `📞 Mobile: ${mobile}\n` +
+        `📧 Email: ${email}\n` +
+        `🏠 Address: ${address}\n\n` +
+        `📌 Property Type: ${type}\n` +
+        `📄 Details: Gat/Survey: ${gat}, Hissa: ${hissa}, Area: ${area}\n` +
+        `🏘 Village: ${village}\n\n` +
+        `📝 Notes: ${notes || "-"}`;
+
+    window.open(`https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
+    closeTSModal();
+}
+
+/* ===== SALE DEED SUBMIT → SHEET + WHATSAPP ===== */
+async function submitSaleDeed(e){
+    e.preventDefault();
+
+    const sdSellName   = document.getElementById("sd_sell_name").value.trim();
+    const sdSellMobile = document.getElementById("sd_sell_mobile").value.trim();
+    const sdSellEmail  = document.getElementById("sd_sell_email").value.trim();
+    const sdSellAddr   = document.getElementById("sd_sell_addr").value.trim();
+
+    const sdBuyName    = document.getElementById("sd_buy_name").value.trim();
+
+    const type         = document.getElementById("sd_type").value;
+    const survey       = document.getElementById("sd_survey").value.trim();
+    const unit         = document.getElementById("sd_unit").value.trim();
+    const area         = document.getElementById("sd_area").value.trim();
+
+    const society      = document.getElementById("sd_society").value.trim();
+    const loan         = document.getElementById("sd_loan").value.trim();
+    const clauses      = document.getElementById("sd_clauses").value.trim();
+
+    const data = {
+        form:         "Sale Deed",
+        name:         `Seller: ${sdSellName} / Buyer: ${sdBuyName}`,
+        mobile:       sdSellMobile,
+        email:        sdSellEmail,
+        address:      sdSellAddr,
+        propertyType: type,
+        details:      `Survey: ${survey}, Unit: ${unit}, Area: ${area}`,
+        extra:        `Society: ${society}, Loan: ${loan}`,
+        notes:        clauses
+    };
+
+    fetch(SHEET_WEBHOOK, {
+        method: "POST",
+        body: JSON.stringify(data)
+    });
+
+    const msg =
+        `*SALE DEED REQUEST*\n\n` +
+        `👤 Seller: ${sdSellName}\n` +
+        `👤 Buyer: ${sdBuyName}\n\n` +
+        `📞 Seller Mobile: ${sdSellMobile}\n` +
+        `📧 Seller Email: ${sdSellEmail}\n` +
+        `🏠 Seller Address: ${sdSellAddr}\n\n` +
+        `📌 Property Type: ${type}\n` +
+        `📄 Survey: ${survey}\n` +
+        `🏷 Unit: ${unit}\n` +
+        `📏 Area: ${area}\n\n` +
+        `🏘 Society: ${society || "-"}\n` +
+        `🏦 Loan / Encumbrance: ${loan || "Not specified"}\n\n` +
+        `📝 Special Clauses: ${clauses || "-"}`;
+
+    window.open(`https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
+    closeSaleDeedModal();
+}
+
+/* ===== ENQUIRY FORM → SHEET + WHATSAPP ===== */
+async function submitEnquiry(event){
+    event.preventDefault();
+
+    const name   = document.getElementById("enq-name").value.trim();
+    const mobile = document.getElementById("enq-mobile").value.trim();
+    const email  = document.getElementById("enq-email").value.trim();
+    const city   = document.getElementById("enq-city").value.trim();
+    const type   = document.getElementById("enq-type").value;
+    const msg    = document.getElementById("enq-message").value.trim();
+
+    // save to Google Sheet
+    fetch(SHEET_WEBHOOK, {
+        method: "POST",
+        body: JSON.stringify({
+            form:         "General Enquiry",
+            name:         name,
+            mobile:       mobile,
+            email:        email,
+            address:      city,
+            propertyType: type,
+            details:      msg,
+            extra:        "-",
+            notes:        ""
+        })
+    });
+
+    const text =
+        `*ENQUIRY FORM*\n\n` +
+        `👤 Name: ${name}\n` +
+        `📞 Mobile: ${mobile}\n` +
+        `📧 Email: ${email || "-"}\n` +
+        `📍 City/Area: ${city || "-"}\n\n` +
+        `Requirement: ${type}\n\n` +
+        `Details:\n${msg || "-"}`;
+
+    window.open(`https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank");
+}
+
+
+    </script>
+</body>
+</html>

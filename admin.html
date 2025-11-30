@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — SV Legal</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header><h1>📁 Incoming Form Requests</h1></header>
+
+<div class="admin-box">
+    <button id="refresh">Refresh</button>
+
+    <table id="requestTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Mobile</th>
+                <th>Date</th>
+                <th>Document</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+const API = "https://sv-legal-backend-production.up.railway.app/admin/requests";
+
+async function loadRequests(){
+    try {
+        const res = await fetch(API);
+        const data = await res.json();
+        const tbody = document.querySelector("#requestTable tbody");
+        tbody.innerHTML = "";
+
+        data.forEach(r => {
+            tbody.innerHTML += `
+                <tr>
+                    <td>${r.name}</td>
+                    <td>${r.formType}</td>
+                    <td>${r.mobile}</td>
+                    <td>${new Date(r.date).toLocaleString()}</td>
+                    <td><a href="${r.document}" target="_blank">Open</a></td>
+                </tr>
+            `;
+        });
+
+    } catch(err){
+        alert("⚠ Backend Offline / Wrong URL");
+    }
+}
+document.getElementById("refresh").onclick = loadRequests;
+
+loadRequests();
+</script>
+
+</body>
+</html>
