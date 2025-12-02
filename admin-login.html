@@ -1,33 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Admin Login — SV Legal</title>
-  <link rel="stylesheet" href="admin.css">
-  <script src="admin.js" defer></script>
-</head>
-<body data-nologin="1">
-  <div style="display:flex;min-height:100vh;align-items:center;justify-content:center;flex-direction:column">
-    <div class="card" style="width:360px;text-align:center">
-      <h2 style="color:var(--accent)">Admin Login</h2>
-      <input id="pwd" placeholder="Password" type="password" style="width:100%;padding:10px;margin:10px 0;border-radius:8px">
-      <div style="display:flex;gap:8px;justify-content:center">
-        <button id="loginBtn">Login</button>
-      </div>
-      <p class="small" style="margin-top:10px">Login persists locally until you logout.</p>
-    </div>
-  </div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login — SV Legal</title>
 
-<script>
-document.getElementById("loginBtn").onclick = () => {
-  const v = document.getElementById("pwd").value;
-  if (v === "sunil@svlegal") {
-    localStorage.setItem("sv_admin","1");
-    location.href = "/admin.html";
-  } else {
-    alert("Wrong password");
-  }
-};
-</script>
-</body>
-</html>
+    <style>
+        body {
+            background: #0b0f16;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .login-box {
+            width: 350px;
+            background: #111829;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            background: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #e6b800;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+        <h2>Admin Login</h2>
+        <input type="password" id="password" placeholder="Enter Admin Password" />
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        async function login() {
+            const pwd = document.getElementById("password").value;
+
+            try {
+                const res = await fetch(
+                    "https://sv-legal-backend-production.up.railway.app/admin/login",
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ password: pwd })
+                    }
+                );
+
+                const data = await res.json();
+
+                if (!res.ok
