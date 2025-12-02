@@ -1,63 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Panel — SV Legal</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <title>Admin — Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
 </head>
+<body onload="checkAuthOrRedirect()">
+  <div class="topbar">
+    <div class="brand">SV Legal — Dashboard</div>
+    <div class="nav">
+      <a href="/admin.html" class="active">Dashboard</a>
+      <a href="/admin-requests.html">Requests</a>
+      <a href="/admin-calls.html">Calls</a>
+      <a href="/admin-appointments.html">Appointments</a>
+      <a href="#" onclick="localStorage.removeItem('sv_admin'); location.href='/admin-login.html'">Logout</a>
+    </div>
+  </div>
 
-<body>
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <div class="kpi" id="kpi_total">—</div>
+        <div class="kpi-sub">Total Requests</div>
+      </div>
+      <div class="card">
+        <div class="kpi" id="kpi_today">—</div>
+        <div class="kpi-sub">Requests Today</div>
+      </div>
+      <div class="card">
+        <div class="kpi" id="kpi_pending">—</div>
+        <div class="kpi-sub">Pending</div>
+      </div>
+      <div class="card">
+        <div class="kpi" id="kpi_calls">—</div>
+        <div class="kpi-sub">Calls Logged</div>
+      </div>
+    </div>
 
-<header><h1>📁 Incoming Form Requests</h1></header>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div><b>Latest Requests</b></div>
+        <div>
+          <button onclick="loadRequestsPage()">Open Requests</button>
+          <button onclick="openLogCallModal()">Log Call</button>
+          <button onclick="openAddAppointment()">Add Appointment</button>
+        </div>
+      </div>
+      <div class="table-wrap" id="latestRequestsWrap" style="margin-top:12px"></div>
+    </div>
 
-<div class="admin-box">
-    <button id="refresh">Refresh</button>
-
-    <table id="requestTable">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Mobile</th>
-                <th>Date</th>
-                <th>Document</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-</div>
+    <div class="footer">SV Legal Admin • built for speed</div>
+  </div>
 
 <script>
-const API = "https://sv-legal-backend-production.up.railway.app/admin/requests";
+async function loadDashboard() {
+  try {
+    const reqs = await apiGet("/requests");
+    const calls = await apiGet("/calls");
+    const appts = await apiGet("/appointments");
 
-async function loadRequests(){
-    try {
-        const res = await fetch(API);
-        const data = await res.json();
-        const tbody = document.querySelector("#requestTable tbody");
-        tbody.innerHTML = "";
+    document.getElementById("kpi_total").innerText = reqs.length;
+    const today = new Date().toISOString().slice(0,10);
+    document.getElementById("kpi_today").innerText = reqs.filter(r=>r.createdAt && r.createdAt.startsWith && r.createdAt.startsWith(today)).length || 0;
+    document.getElementById("kpi_pending").innerText = reqs.filter(r => (r.status||"pending") === "pending").length;
+    document.getElementById("kpi_calls").innerText = calls.length;
 
-        data.forEach(r => {
-            tbody.innerHTML += `
-                <tr>
-                    <td>${r.name}</td>
-                    <td>${r.formType}</td>
-                    <td>${r.mobile}</td>
-                    <td>${new Date(r.date).toLocaleString()}</td>
-                    <td><a href="${r.document}" target="_blank">Open</a></td>
-                </tr>
-            `;
-        });
+    // show 6 latest
+    const latest = reqs.slice(0,6);
+    let html = `<table><thead><tr><th>Name</th><th>Type</th><th>Date</th><th>Actions</th></tr></thead><tbody>`;
+    latest.forEach(r=>{
+      html += `<tr>
+                <td>${r.name}</td>
+                <td>${r.formType}</td>
+                <td>${new Date(r.createdAt).toLocaleString()}</td>
+                <td class="row-actions">
+                  <button class="btn-view" onclick='openTimeline("${r.mobile}")'>Timeline</button>
+                  <button class="btn-approve" onclick='updateStatus("${r._id}","completed")'>Mark Done</button>
+                </td>
+              </tr>`;
+    });
+    html += `</tbody></table>`;
+    document.getElementById("latestRequestsWrap").innerHTML = html;
 
-    } catch(err){
-        alert("⚠ Backend Offline / Wrong URL");
-    }
+  } catch(e) { alert("Failed to load dashboard"); }
 }
-document.getElementById("refresh").onclick = loadRequests;
 
-loadRequests();
+function loadRequestsPage(){ location.href="/admin-requests.html"; }
+
+loadDashboard();
 </script>
-
 </body>
 </html>

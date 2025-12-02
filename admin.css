@@ -1,0 +1,64 @@
+/* admin.css — common admin styles */
+:root{
+  --bg:#0c0f14;
+  --card:#0f1720;
+  --accent:#f4c542;
+  --muted:#9aa3b2;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 22px;
+  background:linear-gradient(90deg,#081021, #0b1624);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.brand{font-weight:700;color:var(--accent);font-size:18px}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:#dbe7ff;text-decoration:none;padding:8px 10px;border-radius:6px;font-weight:600}
+.nav a.active{background:var(--glass);color:var(--accent)}
+
+.container{width:95%;max-width:1200px;margin:26px auto}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:18px}
+.card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+.kpi{font-size:28px;font-weight:700}
+.kpi-sub{color:var(--muted);font-size:13px;margin-top:6px}
+
+.controls{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.controls button{background:var(--accent);border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:700}
+.controls input{padding:8px 12px;border-radius:8px;border:none;width:320px;background:transparent;color:inherit;border:1px solid rgba(255,255,255,0.04)}
+
+.table-wrap{background:var(--card);border-radius:10px;padding:12px}
+table{width:100%;border-collapse:collapse;color:inherit}
+th,td{padding:12px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.03);font-size:14px}
+th{color:var(--muted);font-weight:700}
+.row-actions button{margin-right:8px;padding:6px 10px;border-radius:8px;border:none;cursor:pointer}
+.btn-approve{background:#22c55e;color:#051213}
+.btn-log{background:#00bcd4;color:#051213}
+.btn-view{background:#ffcc00;color:#051213}
+.small{font-size:12px;color:var(--muted)}
+
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:999}
+.modal{width:820px;max-width:95%;background:linear-gradient(180deg,#07101a,#0b1624);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.modal h3{margin:0 0 8px 0}
+.modal .row{display:flex;gap:10px;margin-bottom:8px}
+.modal input, .modal textarea, .modal select{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.modal .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+.link{color:var(--accent);text-decoration:none;font-weight:700}
+.footer{margin:24px 0;text-align:center;color:var(--muted);font-size:13px}
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:520px){
+  .grid{grid-template-columns:1fr}
+  .nav{display:none}
+}

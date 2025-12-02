@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin — Appointments</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body onload="checkAuthOrRedirect()">
+<div class="topbar">
+  <div class="brand">SV Legal — Appointments</div>
+  <div class="nav">
+    <a href="/admin.html">Dashboard</a>
+    <a href="/admin-requests.html">Requests</a>
+    <a href="/admin-calls.html">Calls</a>
+    <a href="/admin-appointments.html" class="active">Appointments</a>
+    <a href="#" onclick="localStorage.removeItem('sv_admin'); location.href='/admin-login.html'">Logout</a>
+  </div>
+</div>
+
+<div class="container">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div><b>Appointments</b></div>
+    <div><button onclick="openAddAppointment()">Add Appointment</button></div>
+  </div>
+
+  <div class="table-wrap" style="margin-top:10px">
+    <table id="apptsTable">
+      <thead><tr><th>Name</th><th>Phone</th><th>Date</th><th>Time</th><th>Mode</th><th>Notes</th></tr></thead>
+      <tbody id="apptsBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+async function loadAppointments(){
+  try{
+    const data = await apiGet("/appointments");
+    const body = document.getElementById("apptsBody");
+    body.innerHTML = "";
+    data.forEach(a=>{
+      body.innerHTML += `<tr>
+        <td>${a.name}</td>
+        <td><a class="link" href="#" onclick='openTimeline("${a.phone}")'>${a.phone}</a></td>
+        <td>${a.date}</td>
+        <td>${a.time}</td>
+        <td>${a.mode}</td>
+        <td>${a.notes || ""}</td>
+      </tr>`;
+    });
+  }catch(e){ alert("Failed to load appointments"); }
+}
+loadAppointments();
+</script>
+</body>
+</html>

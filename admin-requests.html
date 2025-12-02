@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin — Requests</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body onload="checkAuthOrRedirect()">
+
+<div class="topbar">
+  <div class="brand">SV Legal — Requests</div>
+  <div class="nav">
+    <a href="/admin.html">Dashboard</a>
+    <a href="/admin-requests.html" class="active">Requests</a>
+    <a href="/admin-calls.html">Calls</a>
+    <a href="/admin-appointments.html">Appointments</a>
+    <a href="#" onclick="localStorage.removeItem('sv_admin'); location.href='/admin-login.html'">Logout</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="controls">
+    <button onclick="loadRequests()">Refresh</button>
+    <input id="searchInput" placeholder="Search name, mobile, form type" onkeyup="filterRequests()">
+  </div>
+
+  <div class="table-wrap">
+    <table id="requestsTableMain">
+      <thead><tr><th>Name</th><th>Form Type</th><th>Mobile</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody id="reqsBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+async function loadRequests(){
+  try{
+    const data = await apiGet("/requests");
+    window.ALL_REQUESTS = data;
+    renderRequests(data);
+  }catch(e){ alert("Failed to load"); }
+}
+
+function renderRequests(list){
+  const body = document.getElementById("reqsBody");
+  body.innerHTML = "";
+  list.forEach(r=>{
+    body.innerHTML += `<tr>
+      <td>${r.name}</td>
+      <td>${r.formType}</td>
+      <td>${r.mobile}</td>
+      <td>${new Date(r.createdAt).toLocaleString()}</td>
+      <td>${r.status || 'pending'}</td>
+      <td class="row-actions">
+        <button class="btn-view" onclick='openTimeline("${r.mobile}")'>Timeline</button>
+        <button class="btn-log" onclick='openLogCallModal({name:"${r.name}",phone:"${r.mobile}"})'>Log Call</button>
+        <button class="btn-approve" onclick='updateStatus("${r._id}","completed")'>Mark Done</button>
+      </td>
+    </tr>`;
+  });
+}
+
+function filterRequests(){
+  const q = document.getElementById("searchInput").value.toLowerCase();
+  const filtered = (window.ALL_REQUESTS || []).filter(r =>
+    (r.name||"").toLowerCase().includes(q) ||
+    (r.mobile||"").toLowerCase().includes(q) ||
+    (r.formType||"").toLowerCase().includes(q)
+  );
+  renderRequests(filtered);
+}
+
+loadRequests();
+</script>
+</body>
+</html>

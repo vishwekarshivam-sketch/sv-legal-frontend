@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin Login — SV Legal</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body data-nologin="1">
+  <div style="display:flex;min-height:100vh;align-items:center;justify-content:center;flex-direction:column">
+    <div class="card" style="width:360px;text-align:center">
+      <h2 style="color:var(--accent)">Admin Login</h2>
+      <input id="pwd" placeholder="Password" type="password" style="width:100%;padding:10px;margin:10px 0;border-radius:8px">
+      <div style="display:flex;gap:8px;justify-content:center">
+        <button id="loginBtn">Login</button>
+      </div>
+      <p class="small" style="margin-top:10px">Login persists locally until you logout.</p>
+    </div>
+  </div>
+
+<script>
+document.getElementById("loginBtn").onclick = () => {
+  const v = document.getElementById("pwd").value;
+  if (v === "sunil@svlegal") {
+    localStorage.setItem("sv_admin","1");
+    location.href = "/admin.html";
+  } else {
+    alert("Wrong password");
+  }
+};
+</script>
+</body>
+</html>

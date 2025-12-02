@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin — Calls</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body onload="checkAuthOrRedirect()">
+<div class="topbar">
+  <div class="brand">SV Legal — Calls</div>
+  <div class="nav">
+    <a href="/admin.html">Dashboard</a>
+    <a href="/admin-requests.html">Requests</a>
+    <a href="/admin-calls.html" class="active">Calls</a>
+    <a href="/admin-appointments.html">Appointments</a>
+    <a href="#" onclick="localStorage.removeItem('sv_admin'); location.href='/admin-login.html'">Logout</a>
+  </div>
+</div>
+
+<div class="container">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div><b>Recent Calls</b></div>
+    <div>
+      <button onclick="openLogCallModal()">Log Call</button>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-top:10px">
+    <table id="callsTable">
+      <thead><tr><th>Phone</th><th>Name</th><th>Type</th><th>Time</th><th>Notes</th></tr></thead>
+      <tbody id="callsBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+async function loadCalls(){
+  try{
+    const data = await apiGet("/calls");
+    const body = document.getElementById("callsBody");
+    body.innerHTML = "";
+    data.forEach(c=>{
+      body.innerHTML += `<tr>
+        <td><a class="link" href="#" onclick='openTimeline("${c.phone}")'>${c.phone}</a></td>
+        <td>${c.name || "-"}</td>
+        <td>${c.callType}</td>
+        <td>${new Date(c.timestamp).toLocaleString()}</td>
+        <td>${c.notes || ""}</td>
+      </tr>`;
+    });
+  }catch(e){ alert("Failed to load calls"); }
+}
+loadCalls();
+</script>
+</body>
+</html>
